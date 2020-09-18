@@ -1,10 +1,10 @@
 class BonusDrink
   def self.total_count_for(amount)
-    if amount == 0 
-      0
-    elsif amount % 2 == 1
-      amount * 3 / 2 
-    elsif amount % 2 == 0
+    return 0 if amount == 0
+ 
+    if amount.odd?
+      amount * 3 / 2
+    else
       (amount - 1) * 3 / 2 + 1
     end
   end
